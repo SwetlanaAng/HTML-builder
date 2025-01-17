@@ -1,11 +1,10 @@
-var fs = require('fs');
-
-var path = require('path');
+const fs = require('fs');
+const path = require('path');
 const promise = fs.promises;
 promise
   .readdir(path.join(__dirname, 'secret-folder'), { withFileTypes: true })
   .then((items) => {
-    for (var i = 0; i < items.length; i++) {
+    for (let i = 0; i < items.length; i++) {
       if (items[i].isFile()) {
         const filePath = path.join(__dirname, 'secret-folder', items[i].name);
         const name = path.basename(filePath);
