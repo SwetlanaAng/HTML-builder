@@ -99,7 +99,6 @@ function createIndexHtml() {
 
   inputHtml.on('data', (data) => {
     let str = data;
-    console.log(str);
     for (let el of myMap.keys()) {
       let regExp = new RegExp('{{' + el + '}}', 'g');
       str = str.replace(regExp, myMap.get(el));
